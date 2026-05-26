@@ -1,0 +1,337 @@
+/* ============================================================
+   COMPONENTES DEL SISTEMA DE DISEÑO
+   ============================================================
+   Clases utilitarias reutilizables. Si una combinación de
+   estilos aparece más de 2 veces en JSX, se vuelve una clase aquí.
+*/
+
+/* ---- Tipografía base ---- */
+body {
+  font-family: var(--font-sans);
+  background: var(--color-paper);
+  color: var(--color-ink-950);
+  font-size: var(--text-base);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ---- Overline (etiquetas de metadata uppercase) ---- */
+.overline {
+  font-size: var(--text-overline);
+  letter-spacing: var(--tracking-overline);
+  text-transform: uppercase;
+  color: var(--color-stone-500);
+  font-weight: 500;
+}
+
+.overline-accent {
+  font-size: var(--text-overline);
+  letter-spacing: var(--tracking-emphasis);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+/* ---- Botones ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px 20px;
+  font-size: var(--text-body);
+  letter-spacing: var(--tracking-tight);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-base), border-color var(--transition-base), color var(--transition-base);
+  font-family: var(--font-sans);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--color-ink-900);
+  color: var(--color-paper);
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-ink-950);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--color-stone-800);
+  border: var(--border-base);
+}
+.btn-secondary:hover:not(:disabled) {
+  border-color: var(--color-ink-800);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-stone-600);
+  padding: 6px 12px;
+  font-size: var(--text-micro);
+}
+.btn-ghost:hover:not(:disabled) {
+  color: var(--color-ink-950);
+}
+
+.btn-link {
+  background: transparent;
+  border: none;
+  color: var(--color-ink-800);
+  text-transform: uppercase;
+  font-size: var(--text-overline);
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  transition: color var(--transition-base);
+}
+.btn-link:hover {
+  color: var(--color-accent);
+}
+
+.btn-full {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ---- Badges ---- */
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  font-weight: 500;
+  background: var(--color-paper-50);
+  color: var(--color-stone-700);
+}
+
+.badge-ok    { background: var(--color-status-ok-bg);     color: var(--color-status-ok); }
+.badge-warn  { background: var(--color-status-warn-bg);   color: var(--color-status-warn); }
+.badge-danger{ background: var(--color-status-danger-bg); color: var(--color-status-danger); }
+.badge-ink   { background: var(--color-ink-950);          color: var(--color-paper); }
+.badge-accent{ background: rgba(184,133,74,0.1);          color: var(--color-accent-dark); }
+
+/* ---- Inputs ---- */
+.input-line {
+  border: none;
+  border-bottom: 1px solid var(--color-paper-200);
+  background: transparent;
+  padding: 12px 0 10px;
+  font-size: var(--text-base);
+  color: var(--color-ink-900);
+  transition: border-color var(--transition-base);
+  width: 100%;
+  font-family: var(--font-sans);
+}
+.input-line:focus {
+  outline: none;
+  border-bottom-color: var(--color-ink-900);
+}
+
+.input-box {
+  width: 100%;
+  padding: 10px 12px;
+  border: var(--border-base);
+  background: white;
+  font-size: var(--text-base);
+  color: var(--color-ink-950);
+  transition: border-color var(--transition-base);
+  font-family: var(--font-sans);
+}
+.input-box:focus {
+  outline: none;
+  border-color: var(--color-ink-900);
+}
+
+.input-label {
+  display: block;
+  font-size: var(--text-overline);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-stone-600);
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+}
+
+textarea.input-line {
+  resize: none;
+}
+
+/* ---- Cards ---- */
+.card {
+  background: white;
+  border: var(--border-thin);
+}
+
+.card-padded {
+  padding: var(--space-6);
+}
+
+/* ---- Tablas ---- */
+.table-row {
+  display: grid;
+  gap: var(--space-4);
+  align-items: center;
+  padding: 14px 24px;
+  border-bottom: var(--border-thin);
+  transition: background var(--transition-fast);
+}
+.table-row:hover {
+  background: var(--color-paper);
+}
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-header {
+  display: grid;
+  gap: var(--space-4);
+  align-items: center;
+  padding: 12px 24px;
+  background: var(--color-paper-50);
+  font-size: var(--text-overline);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-stone-600);
+  font-weight: 500;
+  border-bottom: var(--border-thin);
+}
+
+/* ---- Sidebar ---- */
+.sidebar {
+  width: 256px;
+  background: var(--color-ink-950);
+  color: var(--color-paper);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  min-height: 100vh;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px 16px;
+  color: rgba(250, 250, 247, 0.6);
+  font-size: var(--text-body);
+  transition: all var(--transition-base);
+  border-left: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-sans);
+}
+.nav-item:hover {
+  color: var(--color-paper);
+  background: rgba(255, 255, 255, 0.04);
+}
+.nav-item.active {
+  color: var(--color-paper);
+  background: rgba(255, 255, 255, 0.06);
+  border-left-color: var(--color-accent);
+}
+
+.nav-section {
+  font-size: 10px;
+  letter-spacing: var(--tracking-overline);
+  text-transform: uppercase;
+  color: rgba(250, 250, 247, 0.35);
+  padding: 24px 16px 8px;
+  font-weight: 500;
+}
+
+/* ---- Tabs ---- */
+.tab-btn {
+  padding: 12px 20px;
+  font-size: var(--text-body);
+  color: var(--color-stone-600);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: var(--font-sans);
+}
+.tab-btn:hover {
+  color: var(--color-ink-950);
+}
+.tab-btn.active {
+  color: var(--color-ink-950);
+  border-bottom-color: var(--color-accent);
+  font-weight: 500;
+}
+
+/* ---- Decorativos ---- */
+.grain-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgba(10, 22, 40, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* ---- Animaciones ---- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* ---- Scrollbar refinada ---- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-paper-200) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-paper-200);
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-stone-500);
+}
+
+/* ---- Estilos cursivos editoriales ---- */
+.italic-accent {
+  font-style: italic;
+  color: var(--color-accent);
+  font-weight: 400;
+}
+
+.italic-danger {
+  font-style: italic;
+  color: var(--color-status-danger);
+}
+
+.italic-ok {
+  font-style: italic;
+  color: var(--color-status-ok);
+}

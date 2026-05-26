@@ -1,0 +1,79 @@
+/* ============================================================
+   DESIGN TOKENS - Única fuente de verdad
+   ============================================================
+   Cualquier color, espaciado, tipografía o sombra del sistema
+   se define AQUÍ y solo aquí. Nunca hardcodear valores en JSX
+   ni en otros archivos CSS.
+*/
+
+:root {
+  /* ---- Colores: Tinta (azul institucional profundo) ---- */
+  --color-ink-950: #0a1628;
+  --color-ink-900: #0f2240;
+  --color-ink-800: #1a3160;
+  --color-ink-700: #2a4a85;
+  --color-ink-600: #3d6bb3;
+  --color-ink-500: #5a8acd;
+
+  /* ---- Colores: Papel (fondo cálido institucional) ---- */
+  --color-paper: #fafaf7;
+  --color-paper-50: #f5f5f0;
+  --color-paper-100: #eaeae0;
+  --color-paper-200: #d4d4cc;
+
+  /* ---- Colores: Piedra (texto secundario) ---- */
+  --color-stone-500: #6b6b62;
+  --color-stone-600: #52524a;
+  --color-stone-700: #3d3d36;
+  --color-stone-800: #2a2a25;
+
+  /* ---- Color de acento (bronce/ocre, único acento) ---- */
+  --color-accent: #b8854a;
+  --color-accent-dark: #8a6235;
+  --color-accent-light: #d4a874;
+
+  /* ---- Colores semánticos de estado ---- */
+  --color-status-ok: #3d6b4f;
+  --color-status-ok-bg: rgba(61, 107, 79, 0.1);
+  --color-status-warn: #a87830;
+  --color-status-warn-bg: rgba(168, 120, 48, 0.1);
+  --color-status-danger: #a83a30;
+  --color-status-danger-bg: rgba(168, 58, 48, 0.1);
+
+  /* ---- Tipografía ---- */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', Menlo, monospace;
+
+  /* ---- Tamaños de texto ---- */
+  --text-overline: 11px;        /* uppercase metadata */
+  --text-micro: 12px;            /* notas, captions */
+  --text-body: 13px;             /* texto cuerpo principal */
+  --text-base: 14px;             /* contenido destacado */
+  --text-large: 15px;            /* leads */
+
+  /* ---- Tracking (letter-spacing) ---- */
+  --tracking-overline: 0.15em;
+  --tracking-tight: 0.04em;
+  --tracking-emphasis: 0.2em;
+
+  /* ---- Espaciado base ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ---- Bordes ---- */
+  --border-thin: 1px solid var(--color-paper-100);
+  --border-base: 1px solid var(--color-paper-200);
+  --border-radius: 0;          /* diseño editorial: sin radios redondeados */
+
+  /* ---- Transiciones ---- */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+}
